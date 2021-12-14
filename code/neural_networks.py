@@ -148,12 +148,13 @@ x = np.arange(12, 24, 1)
 
 for api in APIs:
     plt.title(f'API == {api}')
-    plt.ylabel('Total Passengers')
+    plt.ylabel('Общее количество произведенной жидкой нефти')
     plt.grid(True)
     plt.autoscale(axis='x', tight=True)
-    plt.plot(df[api][:12], label = 'Actual')
-    plt.plot(x,actual_predictions[api], label = 'Prediction')
+    plt.plot(df[api][:12], label = 'Актуальные данные')
+    plt.plot(x,actual_predictions[api], label = 'Предсказанные')
     plt.legend()
-    plt.show()
+    # plt.show()
     plt.savefig(f'result/result_for_api_{api}')
+    plt.clf()
 
